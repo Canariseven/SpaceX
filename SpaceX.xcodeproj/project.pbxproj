@@ -13,6 +13,10 @@
 		32120E9625E58D9B002739F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32120E8125E58D95002739F1 /* ContentView.swift */; };
 		32120E9725E58D9B002739F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32120E8225E58D9A002739F1 /* Assets.xcassets */; };
 		32120E9825E58D9B002739F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32120E8225E58D9A002739F1 /* Assets.xcassets */; };
+		321D6F1025E6D1E500C247A6 /* DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D6F0F25E6D1E500C247A6 /* DownloadImage.swift */; };
+		321D6F1125E6D1E500C247A6 /* DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D6F0F25E6D1E500C247A6 /* DownloadImage.swift */; };
+		321D6F1825E6D3A100C247A6 /* RocketsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D6F1725E6D3A100C247A6 /* RocketsService.swift */; };
+		321D6F1925E6D3A100C247A6 /* RocketsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D6F1725E6D3A100C247A6 /* RocketsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,8 @@
 		32120E9125E58D9B002739F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32120E9225E58D9B002739F1 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		32120EA325E5920D002739F1 /* SpaceXClient */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SpaceXClient; path = ../SpaceXClient; sourceTree = "<group>"; };
+		321D6F0F25E6D1E500C247A6 /* DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImage.swift; sourceTree = "<group>"; };
+		321D6F1725E6D3A100C247A6 /* RocketsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,8 @@
 		32120E7F25E58D95002739F1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				321D6F1625E6D36600C247A6 /* Services */,
+				321D6F0E25E6D1B800C247A6 /* Resource */,
 				32120E8025E58D95002739F1 /* SpaceXApp.swift */,
 				32120E8125E58D95002739F1 /* ContentView.swift */,
 				32120E8225E58D9A002739F1 /* Assets.xcassets */,
@@ -90,6 +98,22 @@
 				32120E9225E58D9B002739F1 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		321D6F0E25E6D1B800C247A6 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				321D6F0F25E6D1E500C247A6 /* DownloadImage.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		321D6F1625E6D36600C247A6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				321D6F1725E6D3A100C247A6 /* RocketsService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +214,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				32120E9525E58D9B002739F1 /* ContentView.swift in Sources */,
+				321D6F1025E6D1E500C247A6 /* DownloadImage.swift in Sources */,
 				32120E9325E58D9B002739F1 /* SpaceXApp.swift in Sources */,
+				321D6F1825E6D3A100C247A6 /* RocketsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +225,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				32120E9625E58D9B002739F1 /* ContentView.swift in Sources */,
+				321D6F1125E6D1E500C247A6 /* DownloadImage.swift in Sources */,
 				32120E9425E58D9B002739F1 /* SpaceXApp.swift in Sources */,
+				321D6F1925E6D3A100C247A6 /* RocketsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
