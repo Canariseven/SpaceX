@@ -14,9 +14,11 @@ struct DetailRocket: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: true, content: {
             VStack(alignment: .center, spacing: 0, content: {
-                header().height(420, alignment: .top)
+                ZStack(alignment: .top, content: {
+                    header().height(520, alignment: .top)
+                    Rectangle().foregroundColor(.clear).whiteBackgroundGradient().rotationEffect(Angle.degrees(180)).height(64 + 32, alignment: .top)
+                })
                 content()
-                
             })
         })
        .background(Color.black)
@@ -55,20 +57,29 @@ struct DetailRocket: View {
 
 struct HeaderDetailRocket: View {
     let rocket : Rocket
-    private let downloader: DownloadImage = DownloadImage()
-    @State var image : Image?
-    
+    let timer = Timer.publish(every: 3, on: RunLoop.main, in: RunLoop.Mode.default).autoconnect()
+    @State var selected = 0
     var body: some View {
         ZStack(alignment: .bottomLeading, content: {
             backgroundImages()
             bottomInfo().infinityWidth(alignment: .leading).blackBackgroundGradient()
-        }).onAppear(perform: {
-            downloader.download(url: rocket.flickr_images.first!, content: $image)
+        }).onReceive(timer, perform: { _ in
+            withAnimation(Animation.easeInOut(duration: 0.3)) {
+                if selected < rocket.flickr_images.count - 1 {
+                    selected += 1
+                } else {
+                    selected = 0
+                }
+            }
         })
     }
     
     func backgroundImages() -> some View {
-        image?.resizable()
+        ZStack(alignment: .center, content: {
+            ForEach((0..<rocket.flickr_images.count), id: \.self) { index in
+                DetailImage(url: rocket.flickr_images[index]).opacity(index == selected ? 1.0 : 0.0)
+            }
+        })
     }
     
     func bottomInfo() -> some View {
@@ -78,6 +89,21 @@ struct HeaderDetailRocket: View {
         }).padding().foregroundColor(.white)
     }
     
+}
+
+struct DetailImage : View {
+    let url: URL
+    private let downloader: DownloadImage = DownloadImage()
+    @State private var image : Image?
+    
+    var body: some View {
+        ZStack(alignment: .bottomLeading, content: {
+            image?.resizable()
+        }).onAppear(perform: {
+            downloader.download(url: url, content: $image)
+        })
+    }
+
 }
 
 struct DetailRockt_Previews: PreviewProvider {

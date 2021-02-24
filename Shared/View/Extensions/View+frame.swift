@@ -1,6 +1,6 @@
 //
 //  View+frame.swift
-//  soyApp (iOS)
+//  
 //
 //  Created by Carmelo Ruymán Quintana Santana on 28/12/20.
 //
