@@ -5,6 +5,7 @@
 //  Created by Carmelo Ruymán Quintana Santana on 24/2/21.
 //
 
+import Foundation
 import Combine
 import SpaceXApi
 import SpaceXClient
@@ -20,7 +21,10 @@ final class RocketsService: ObservableObject {
     }
     
     func getAllRockets() {
-        client.getAllRockets().sink { (result) in
+        client.getAllRockets()
+            .subscribe(on: DispatchQueue.global())
+            .receive(on: RunLoop.main)
+            .sink { (result) in
             switch result {
             case .finished:
                 debugPrint("Finished")

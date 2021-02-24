@@ -13,8 +13,8 @@ class DownloadImage {
     
     var subscribers: Set<AnyCancellable> = Set<AnyCancellable>()
     
-    func download(url: URL, content: Binding<Image>) {
-        URLSession.shared.dataTaskPublisher(for: url).sink { (result) in
+    func download(url: URL, content: Binding<Image?>) {
+        URLSession.shared.dataTaskPublisher(for: url).subscribe(on: DispatchQueue.global()).receive(on: RunLoop.main).sink { (result) in
             switch result {
             case .finished:
                 debugPrint("Image \(url.lastPathComponent) Downloaded")
