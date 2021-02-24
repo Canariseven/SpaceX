@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,14 @@
 		321D6F1125E6D1E500C247A6 /* DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D6F0F25E6D1E500C247A6 /* DownloadImage.swift */; };
 		321D6F1825E6D3A100C247A6 /* RocketsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D6F1725E6D3A100C247A6 /* RocketsService.swift */; };
 		321D6F1925E6D3A100C247A6 /* RocketsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D6F1725E6D3A100C247A6 /* RocketsService.swift */; };
+		321D6F1E25E6D53E00C247A6 /* SpaceXApi in Frameworks */ = {isa = PBXBuildFile; productRef = 321D6F1D25E6D53E00C247A6 /* SpaceXApi */; };
+		321D6F2025E6D53E00C247A6 /* SpaceXClient in Frameworks */ = {isa = PBXBuildFile; productRef = 321D6F1F25E6D53E00C247A6 /* SpaceXClient */; };
+		321D6F2425E6D54800C247A6 /* SpaceXApi in Frameworks */ = {isa = PBXBuildFile; productRef = 321D6F2325E6D54800C247A6 /* SpaceXApi */; };
+		321D6F2625E6D54800C247A6 /* SpaceXClient in Frameworks */ = {isa = PBXBuildFile; productRef = 321D6F2525E6D54800C247A6 /* SpaceXClient */; };
+		321D6F2B25E6D57400C247A6 /* RocketsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D6F2A25E6D57400C247A6 /* RocketsMapper.swift */; };
+		321D6F2C25E6D57400C247A6 /* RocketsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D6F2A25E6D57400C247A6 /* RocketsMapper.swift */; };
+		321D6F3425E6D5AC00C247A6 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D6F3325E6D5AC00C247A6 /* Rocket.swift */; };
+		321D6F3525E6D5AC00C247A6 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D6F3325E6D5AC00C247A6 /* Rocket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +39,8 @@
 		32120EA325E5920D002739F1 /* SpaceXClient */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SpaceXClient; path = ../SpaceXClient; sourceTree = "<group>"; };
 		321D6F0F25E6D1E500C247A6 /* DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImage.swift; sourceTree = "<group>"; };
 		321D6F1725E6D3A100C247A6 /* RocketsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsService.swift; sourceTree = "<group>"; };
+		321D6F2A25E6D57400C247A6 /* RocketsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsMapper.swift; sourceTree = "<group>"; };
+		321D6F3325E6D5AC00C247A6 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				321D6F1E25E6D53E00C247A6 /* SpaceXApi in Frameworks */,
+				321D6F2025E6D53E00C247A6 /* SpaceXClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				321D6F2425E6D54800C247A6 /* SpaceXApi in Frameworks */,
+				321D6F2625E6D54800C247A6 /* SpaceXClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,14 +73,14 @@
 				32120E8925E58D9A002739F1 /* iOS */,
 				32120E9025E58D9B002739F1 /* macOS */,
 				32120E8825E58D9A002739F1 /* Products */,
+				321D6F1C25E6D53E00C247A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		32120E7F25E58D95002739F1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				321D6F1625E6D36600C247A6 /* Services */,
-				321D6F0E25E6D1B800C247A6 /* Resource */,
+				321D6F3125E6D57800C247A6 /* Models */,
 				32120E8025E58D95002739F1 /* SpaceXApp.swift */,
 				32120E8125E58D95002739F1 /* ContentView.swift */,
 				32120E8225E58D9A002739F1 /* Assets.xcassets */,
@@ -116,6 +130,40 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		321D6F1C25E6D53E00C247A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		321D6F2925E6D54F00C247A6 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				321D6F2A25E6D57400C247A6 /* RocketsMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		321D6F3125E6D57800C247A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				321D6F3225E6D59A00C247A6 /* Entities */,
+				321D6F2925E6D54F00C247A6 /* Mappers */,
+				321D6F1625E6D36600C247A6 /* Services */,
+				321D6F0E25E6D1B800C247A6 /* Resource */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		321D6F3225E6D59A00C247A6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				321D6F3325E6D5AC00C247A6 /* Rocket.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +180,10 @@
 			dependencies = (
 			);
 			name = "SpaceX (iOS)";
+			packageProductDependencies = (
+				321D6F1D25E6D53E00C247A6 /* SpaceXApi */,
+				321D6F1F25E6D53E00C247A6 /* SpaceXClient */,
+			);
 			productName = "SpaceX (iOS)";
 			productReference = 32120E8725E58D9A002739F1 /* SpaceX.app */;
 			productType = "com.apple.product-type.application";
@@ -149,6 +201,10 @@
 			dependencies = (
 			);
 			name = "SpaceX (macOS)";
+			packageProductDependencies = (
+				321D6F2325E6D54800C247A6 /* SpaceXApi */,
+				321D6F2525E6D54800C247A6 /* SpaceXClient */,
+			);
 			productName = "SpaceX (macOS)";
 			productReference = 32120E8F25E58D9B002739F1 /* SpaceX.app */;
 			productType = "com.apple.product-type.application";
@@ -216,6 +272,8 @@
 				32120E9525E58D9B002739F1 /* ContentView.swift in Sources */,
 				321D6F1025E6D1E500C247A6 /* DownloadImage.swift in Sources */,
 				32120E9325E58D9B002739F1 /* SpaceXApp.swift in Sources */,
+				321D6F3425E6D5AC00C247A6 /* Rocket.swift in Sources */,
+				321D6F2B25E6D57400C247A6 /* RocketsMapper.swift in Sources */,
 				321D6F1825E6D3A100C247A6 /* RocketsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +285,8 @@
 				32120E9625E58D9B002739F1 /* ContentView.swift in Sources */,
 				321D6F1125E6D1E500C247A6 /* DownloadImage.swift in Sources */,
 				32120E9425E58D9B002739F1 /* SpaceXApp.swift in Sources */,
+				321D6F3525E6D5AC00C247A6 /* Rocket.swift in Sources */,
+				321D6F2C25E6D57400C247A6 /* RocketsMapper.swift in Sources */,
 				321D6F1925E6D3A100C247A6 /* RocketsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,6 +529,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		321D6F1D25E6D53E00C247A6 /* SpaceXApi */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SpaceXApi;
+		};
+		321D6F1F25E6D53E00C247A6 /* SpaceXClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SpaceXClient;
+		};
+		321D6F2325E6D54800C247A6 /* SpaceXApi */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SpaceXApi;
+		};
+		321D6F2525E6D54800C247A6 /* SpaceXClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SpaceXClient;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 32120E7B25E58D95002739F1 /* Project object */;
 }
