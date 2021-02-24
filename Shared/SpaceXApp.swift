@@ -21,7 +21,7 @@ struct SpaceXApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(appContainer)
+            ContentView().accentColor(Color.black).environmentObject(appContainer)
         }
     }
 }

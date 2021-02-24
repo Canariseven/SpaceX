@@ -15,9 +15,14 @@ struct CarouselRockets: View {
         ScrollView(.horizontal, showsIndicators: false, content: {
             LazyHStack(alignment: .center, spacing: 16, pinnedViews: [], content: {
                 ForEach(rocketService.list, id: \.id) { rocket in
-                    RowRocket(rocket: rocket)
+                    NavigationLink(
+                        destination: DetailRocket(rocket: rocket),
+                        label: {
+                            RowRocket(rocket: rocket)
+                        })
+                    
                 }
-            }).padding()
+            }).padding(.horizontal)
         }).onAppear(perform: {
             rocketService.getAllRockets()
         })

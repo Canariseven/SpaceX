@@ -13,7 +13,12 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            CarouselRockets(rocketService: appContainer.resolve()).navigationTitle("SpaceX Rockets")
+            ScrollView {
+                CustomSection(title: "Rockets", offset: 24) {
+                    CarouselRockets(rocketService: appContainer.resolve())
+                }
+            }
+            .navigationTitle("SpaceX Rockets")
         }
     }
 }
