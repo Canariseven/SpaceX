@@ -20,7 +20,6 @@ enum GenericStates: Equatable {
 
     var rawValue: Int {
         switch self {
-
         case .loading:
             return 1
         case .loaded:
@@ -49,4 +48,5 @@ enum GenericStates: Equatable {
             return text
         }
     }
+
 }

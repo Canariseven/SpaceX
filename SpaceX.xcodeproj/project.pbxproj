@@ -73,6 +73,16 @@
 		32A08C6525E7F09C00FCEB85 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A08C6325E7F09C00FCEB85 /* ApiService.swift */; };
 		32A08C6925E7F0CC00FCEB85 /* GenericStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A08C6825E7F0CC00FCEB85 /* GenericStates.swift */; };
 		32A08C6A25E7F0CC00FCEB85 /* GenericStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A08C6825E7F0CC00FCEB85 /* GenericStates.swift */; };
+		32A08C6E25E7F97F00FCEB85 /* RowMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A08C6D25E7F97F00FCEB85 /* RowMission.swift */; };
+		32A08C6F25E7F97F00FCEB85 /* RowMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A08C6D25E7F97F00FCEB85 /* RowMission.swift */; };
+		32A08C7325E7FA0200FCEB85 /* MissionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A08C7225E7FA0200FCEB85 /* MissionsService.swift */; };
+		32A08C7425E7FA0200FCEB85 /* MissionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A08C7225E7FA0200FCEB85 /* MissionsService.swift */; };
+		32A08C7925E7FC1E00FCEB85 /* ListMissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A08C7825E7FC1E00FCEB85 /* ListMissions.swift */; };
+		32A08C7A25E7FC1E00FCEB85 /* ListMissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A08C7825E7FC1E00FCEB85 /* ListMissions.swift */; };
+		32A08C7E25E7FCCA00FCEB85 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A08C7D25E7FCCA00FCEB85 /* Mission.swift */; };
+		32A08C7F25E7FCCA00FCEB85 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A08C7D25E7FCCA00FCEB85 /* Mission.swift */; };
+		32A08C8325E7FD1800FCEB85 /* MissionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A08C8225E7FD1800FCEB85 /* MissionMapper.swift */; };
+		32A08C8425E7FD1800FCEB85 /* MissionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A08C8225E7FD1800FCEB85 /* MissionMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +123,11 @@
 		32A08C5E25E7F06B00FCEB85 /* ApiServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServiceType.swift; sourceTree = "<group>"; };
 		32A08C6325E7F09C00FCEB85 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		32A08C6825E7F0CC00FCEB85 /* GenericStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericStates.swift; sourceTree = "<group>"; };
+		32A08C6D25E7F97F00FCEB85 /* RowMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowMission.swift; sourceTree = "<group>"; };
+		32A08C7225E7FA0200FCEB85 /* MissionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsService.swift; sourceTree = "<group>"; };
+		32A08C7825E7FC1E00FCEB85 /* ListMissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMissions.swift; sourceTree = "<group>"; };
+		32A08C7D25E7FCCA00FCEB85 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		32A08C8225E7FD1800FCEB85 /* MissionMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +155,7 @@
 		320C59FB25E6D9E7000FA448 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				32A08C7725E7FC0E00FCEB85 /* Missions */,
 				328DA38225E7D0A300A6E7CF /* CompanyInfo */,
 				320C5A3125E701A1000FA448 /* Extensions */,
 				320C5A2925E700C7000FA448 /* Modifieds */,
@@ -164,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				320C5A1425E6E915000FA448 /* RowRocket.swift */,
+				32A08C6D25E7F97F00FCEB85 /* RowMission.swift */,
 			);
 			path = Rows;
 			sourceTree = "<group>";
@@ -238,7 +255,6 @@
 		32120E7F25E58D95002739F1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				32A08C5E25E7F06B00FCEB85 /* ApiServiceType.swift */,
 				320C5A4E25E71301000FA448 /* Utils */,
 				320C5A3E25E70BF6000FA448 /* Extensions */,
 				320C5A0625E6DB8A000FA448 /* PreviewResources */,
@@ -292,6 +308,7 @@
 				320C5A4425E712DB000FA448 /* CacheService.swift */,
 				321D6F1725E6D3A100C247A6 /* RocketsService.swift */,
 				328DA38C25E7D27000A6E7CF /* CompanyInfoServices.swift */,
+				32A08C7225E7FA0200FCEB85 /* MissionsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -307,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				321D6F2A25E6D57400C247A6 /* RocketsMapper.swift */,
+				32A08C8225E7FD1800FCEB85 /* MissionMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -314,6 +332,7 @@
 		321D6F3125E6D57800C247A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				32A08C5E25E7F06B00FCEB85 /* ApiServiceType.swift */,
 				32A08C6825E7F0CC00FCEB85 /* GenericStates.swift */,
 				321D6F3225E6D59A00C247A6 /* Entities */,
 				321D6F2925E6D54F00C247A6 /* Mappers */,
@@ -328,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				321D6F3325E6D5AC00C247A6 /* Rocket.swift */,
+				32A08C7D25E7FCCA00FCEB85 /* Mission.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -338,6 +358,14 @@
 				328DA38325E7D0DC00A6E7CF /* CompanyInfoView.swift */,
 			);
 			path = CompanyInfo;
+			sourceTree = "<group>";
+		};
+		32A08C7725E7FC0E00FCEB85 /* Missions */ = {
+			isa = PBXGroup;
+			children = (
+				32A08C7825E7FC1E00FCEB85 /* ListMissions.swift */,
+			);
+			path = Missions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,11 +482,13 @@
 				320C5A0225E6DA39000FA448 /* AppContainer.swift in Sources */,
 				320C5A0F25E6E774000FA448 /* ExampleRocket.swift in Sources */,
 				321D6F1025E6D1E500C247A6 /* DownloadImage.swift in Sources */,
+				32A08C7925E7FC1E00FCEB85 /* ListMissions.swift in Sources */,
 				327675C625E7BFE100F3D7F3 /* AnyViewModifier.swift in Sources */,
 				32A08C6425E7F09C00FCEB85 /* ApiService.swift in Sources */,
 				327675CD25E7C0D600F3D7F3 /* CustomDivider.swift in Sources */,
 				320C5A1525E6E915000FA448 /* RowRocket.swift in Sources */,
 				32A08C6925E7F0CC00FCEB85 /* GenericStates.swift in Sources */,
+				32A08C8325E7FD1800FCEB85 /* MissionMapper.swift in Sources */,
 				320C5A3825E70405000FA448 /* TagStyle.swift in Sources */,
 				320C5A4A25E712F9000FA448 /* ReadWriteLock.swift in Sources */,
 				320C5A0825E6DBAC000FA448 /* PreviewMocks.swift in Sources */,
@@ -467,12 +497,15 @@
 				327675C125E7BEC600F3D7F3 /* CustomGradient.swift in Sources */,
 				321D6F3425E6D5AC00C247A6 /* Rocket.swift in Sources */,
 				327675BC25E79ED300F3D7F3 /* BasicAlertError.swift in Sources */,
+				32A08C7325E7FA0200FCEB85 /* MissionsService.swift in Sources */,
 				321D6F2B25E6D57400C247A6 /* RocketsMapper.swift in Sources */,
 				320C59FD25E6DA03000FA448 /* CarouselOfRockets.swift in Sources */,
 				320C5A2025E6FDB2000FA448 /* CustomSection.swift in Sources */,
 				320C5A2525E6FF15000FA448 /* DetailRocket.swift in Sources */,
 				320C5A4025E70C09000FA448 /* Formatter+String.swift in Sources */,
 				320C5A4525E712DB000FA448 /* CacheService.swift in Sources */,
+				32A08C7E25E7FCCA00FCEB85 /* Mission.swift in Sources */,
+				32A08C6E25E7F97F00FCEB85 /* RowMission.swift in Sources */,
 				328DA38425E7D0DC00A6E7CF /* CompanyInfoView.swift in Sources */,
 				321D6F1825E6D3A100C247A6 /* RocketsService.swift in Sources */,
 			);
@@ -491,11 +524,13 @@
 				320C5A0325E6DA39000FA448 /* AppContainer.swift in Sources */,
 				320C5A1025E6E774000FA448 /* ExampleRocket.swift in Sources */,
 				321D6F1125E6D1E500C247A6 /* DownloadImage.swift in Sources */,
+				32A08C7A25E7FC1E00FCEB85 /* ListMissions.swift in Sources */,
 				327675C725E7BFE100F3D7F3 /* AnyViewModifier.swift in Sources */,
 				32A08C6525E7F09C00FCEB85 /* ApiService.swift in Sources */,
 				327675CE25E7C0D600F3D7F3 /* CustomDivider.swift in Sources */,
 				320C5A1625E6E915000FA448 /* RowRocket.swift in Sources */,
 				32A08C6A25E7F0CC00FCEB85 /* GenericStates.swift in Sources */,
+				32A08C8425E7FD1800FCEB85 /* MissionMapper.swift in Sources */,
 				320C5A3925E70405000FA448 /* TagStyle.swift in Sources */,
 				320C5A4B25E712F9000FA448 /* ReadWriteLock.swift in Sources */,
 				320C5A0925E6DBAC000FA448 /* PreviewMocks.swift in Sources */,
@@ -504,12 +539,15 @@
 				327675C225E7BEC600F3D7F3 /* CustomGradient.swift in Sources */,
 				321D6F3525E6D5AC00C247A6 /* Rocket.swift in Sources */,
 				327675BD25E79ED300F3D7F3 /* BasicAlertError.swift in Sources */,
+				32A08C7425E7FA0200FCEB85 /* MissionsService.swift in Sources */,
 				321D6F2C25E6D57400C247A6 /* RocketsMapper.swift in Sources */,
 				320C59FE25E6DA03000FA448 /* CarouselOfRockets.swift in Sources */,
 				320C5A2125E6FDB2000FA448 /* CustomSection.swift in Sources */,
 				320C5A2625E6FF15000FA448 /* DetailRocket.swift in Sources */,
 				320C5A4125E70C09000FA448 /* Formatter+String.swift in Sources */,
 				320C5A4625E712DB000FA448 /* CacheService.swift in Sources */,
+				32A08C7F25E7FCCA00FCEB85 /* Mission.swift in Sources */,
+				32A08C6F25E7F97F00FCEB85 /* RowMission.swift in Sources */,
 				328DA38525E7D0DC00A6E7CF /* CompanyInfoView.swift in Sources */,
 				321D6F1925E6D3A100C247A6 /* RocketsService.swift in Sources */,
 			);

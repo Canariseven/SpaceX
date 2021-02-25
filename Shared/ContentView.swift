@@ -24,13 +24,15 @@ struct ContentView: View {
 
     func mainView() -> some View {
         NavigationView {
-            ScrollView {
+            VStack {
                 CustomSection(title: "Rockets", offset: 24) {
                     CarouselRockets(rocketService: appContainer.resolve())
+                }.height(260)
+                CustomSection(title: "Missions", offset: 24) {
+                    ListMissions(missionsService: appContainer.resolve())
                 }
-            }
-            .navigationTitle("SpaceX Rockets")
-        }.tabItem { mainItem }
+            }.navigationTitle("SpaceX Rockets")
+        }.tabItem { mainItem }.background(Color.white)
     }
 
     func infoView() -> some View {

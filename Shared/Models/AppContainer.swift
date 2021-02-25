@@ -25,4 +25,8 @@ final class AppContainer: ObservableObject {
         CompanyInfoService(client: client)
     }
 
+    func resolve() -> MissionsService {
+        MissionsService(client: client)
+    }
+
 }
