@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SpaceXClient",
+        "repositoryURL": "https://github.com/Canariseven/SpaceXClient.git",
+        "state": {
+          "branch": "main",
+          "revision": "c9cb155cb4a7e48785e08cb51ac890c796d57fc9",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
