@@ -1,6 +1,6 @@
 //
 //  GenericStates.swift
-//  soyApp
+//  
 //
 //  Created by Carmelo Ruymán Quintana Santana on 22/1/21.
 //

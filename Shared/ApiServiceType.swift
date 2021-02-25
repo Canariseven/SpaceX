@@ -1,6 +1,6 @@
 //
 //  ApiServiceType.swift
-//  soyApp
+//  
 //
 //  Created by Carmelo Ruymán Quintana Santana on 23/1/21.
 //

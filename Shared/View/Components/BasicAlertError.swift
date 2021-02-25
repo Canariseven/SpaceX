@@ -1,6 +1,6 @@
 //
 //  BasicAlertError.swift
-//  soyApp
+//  
 //
 //  Created by Carmelo Ruymán Quintana Santana on 21/1/21.
 //
@@ -20,21 +20,21 @@ enum BasicAlertError: Int, AlertsBuilderType, Error {
     }
 
     var title: Text {
-        var text: LocalizedStringKey = "ups"
+        var text: LocalizedStringKey = "Ups!"
         switch self {
         case .genericError:
-            text = "ups"
+            text = "Ups!"
         case .noReachability:
-            text = "ups"
+            text = "Ups!"
         case .noLocation:
-            text = "ups"
+            text = "Ups!"
         }
 
         return Text(text, bundle: .main)
     }
 
     var message: Text {
-        var text: LocalizedStringKey = "Algo ha ocurrido"
+        var text: LocalizedStringKey = "Something has happened"
         switch self {
         case .genericError:
             text = "generic.message"
