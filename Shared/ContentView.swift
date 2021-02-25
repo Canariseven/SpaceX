@@ -32,13 +32,13 @@ struct ContentView: View {
                     ListMissions(missionsService: appContainer.resolve())
                 }
             }.navigationTitle("SpaceX Rockets")
-        }.tabItem { mainItem }.background(Color.white)
+        }.navigationViewStyle(StackNavigationViewStyle()).tabItem { mainItem }.background(Color.white)
     }
 
     func infoView() -> some View {
         NavigationView {
             CompanyInfoView(companyInfoService: appContainer.resolve())
-        }.tabItem { infoItem }
+        }.navigationViewStyle(StackNavigationViewStyle()).tabItem { infoItem }
     }
 
 }

@@ -155,14 +155,13 @@
 		320C59FB25E6D9E7000FA448 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				32A08C7725E7FC0E00FCEB85 /* Missions */,
 				328DA38225E7D0A300A6E7CF /* CompanyInfo */,
 				320C5A3125E701A1000FA448 /* Extensions */,
 				320C5A2925E700C7000FA448 /* Modifieds */,
 				320C5A1E25E6FDA2000FA448 /* Components */,
 				320C5A1B25E6FCA7000FA448 /* Details */,
 				320C5A1325E6E902000FA448 /* Rows */,
-				320C59FC25E6DA03000FA448 /* CarouselOfRockets.swift */,
+				3212069125E8336B007D34DB /* Lists */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -238,6 +237,15 @@
 				320C5A4925E712F9000FA448 /* ReadWriteLock.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		3212069125E8336B007D34DB /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				32A08C7825E7FC1E00FCEB85 /* ListMissions.swift */,
+				320C59FC25E6DA03000FA448 /* CarouselOfRockets.swift */,
+			);
+			path = Lists;
 			sourceTree = "<group>";
 		};
 		32120E7A25E58D95002739F1 = {
@@ -358,14 +366,6 @@
 				328DA38325E7D0DC00A6E7CF /* CompanyInfoView.swift */,
 			);
 			path = CompanyInfo;
-			sourceTree = "<group>";
-		};
-		32A08C7725E7FC0E00FCEB85 /* Missions */ = {
-			isa = PBXGroup;
-			children = (
-				32A08C7825E7FC1E00FCEB85 /* ListMissions.swift */,
-			);
-			path = Missions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

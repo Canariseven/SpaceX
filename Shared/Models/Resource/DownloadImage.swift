@@ -16,7 +16,8 @@ class DownloadImage {
 
     func download(url: URL, content: Binding<Image?>) {
         if let image = CacheService.getImage(url: url, queue: readWrite) {
-            return content.wrappedValue = Image(uiImage: image)
+            content.wrappedValue = Image(uiImage: image)
+            return
         }
         URLSession.shared.dataTaskPublisher(for: url).subscribe(on: DispatchQueue.global()).receive(on: RunLoop.main).sink { (result) in
             switch result {
