@@ -11,9 +11,9 @@ import Combine
 
 class DownloadImage {
 
-    var readWrite : ReadWriteLock = ReadWriteLock(label: "DownloadImageQueue")
+    var readWrite: ReadWriteLock = ReadWriteLock(label: "DownloadImageQueue")
     var subscribers: Set<AnyCancellable> = Set<AnyCancellable>()
-    
+
     func download(url: URL, content: Binding<Image?>) {
         if let image = CacheService.getImage(url: url, queue: readWrite) {
             return content.wrappedValue = Image(uiImage: image)
@@ -32,5 +32,5 @@ class DownloadImage {
             }
         }.store(in: &subscribers)
     }
-    
+
 }

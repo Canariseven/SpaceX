@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 import SpaceXClient
 
-enum BasicAlertError:Int, AlertsBuilderType, Error {    
-    
+enum BasicAlertError: Int, AlertsBuilderType, Error {
+
     case genericError = 0
     case noReachability = 1
     case noLocation = 4
@@ -60,12 +60,12 @@ enum BasicAlertError:Int, AlertsBuilderType, Error {
     var secondary: Alert.Button? { nil }
 }
 
-func mapError(error : Error) -> BasicAlertError {
+func mapError(error: Error) -> BasicAlertError {
     if let error = error as? ClientError {
         switch error {
         case .couldNotDecodeJSON:
             return BasicAlertError.genericError
-        case .badStatus(_, _):
+        case .badStatus:
             return BasicAlertError.genericError
         case .noReachability:
             return BasicAlertError.genericError

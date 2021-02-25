@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct HeaderDetailRocket: View {
-    
-    let rocket : Rocket
-    
+
+    let rocket: Rocket
+
     private let timer = Timer.publish(every: 3, on: RunLoop.main, in: RunLoop.Mode.default).autoconnect()
     @State private var selected = 0
-    
+
     var body: some View {
         ZStack(alignment: .bottomLeading, content: {
             backgroundImages()
@@ -28,7 +28,7 @@ struct HeaderDetailRocket: View {
             }
         })
     }
-    
+
     private func backgroundImages() -> some View {
         ZStack(alignment: .center, content: {
             ForEach((0..<rocket.flickr_images.count), id: \.self) { index in
@@ -36,7 +36,7 @@ struct HeaderDetailRocket: View {
             }
         })
     }
-    
+
     private func bottomInfo() -> some View {
         VStack(alignment: .leading, spacing: 8, content: {
             Text(rocket.name).font(.system(size: 64, weight: Font.Weight.heavy, design: .rounded))

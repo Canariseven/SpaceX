@@ -15,11 +15,11 @@ protocol AlertsBuilderType: Identifiable, Error {
     var title: Text { get }
     var message: Text { get }
     var primary: Alert.Button? { get }
-    var secondary: Alert.Button? { get }    
+    var secondary: Alert.Button? { get }
 }
 
 extension AlertsBuilderType {
-    
+
     static func build(error: Error) -> BasicAlertError? {
         if let error = error as? ClientError {
             if case ClientError.noReachability = error {

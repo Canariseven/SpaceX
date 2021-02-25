@@ -11,10 +11,10 @@ struct CustomSection<Content>: View where Content: View {
     let title: LocalizedStringKey
     var offset: CGFloat = 0.0
     let content: () -> (Content)
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 8, content: {
-            Text(title).font(.title2).bold().offset(x:offset)
+            Text(title).font(.title2).bold().offset(x: offset)
             content()
         })
     }

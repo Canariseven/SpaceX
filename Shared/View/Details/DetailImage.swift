@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct DetailImage: View {
-    
+
     let url: URL
     private let downloader: DownloadImage = DownloadImage()
-    @State private var image : Image?
-    
+    @State private var image: Image?
+
     var body: some View {
         ZStack(alignment: .bottomLeading, content: {
             image?.resizable()

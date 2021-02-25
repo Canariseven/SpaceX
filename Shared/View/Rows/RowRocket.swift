@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct RowRocket: View {
-    let rocket : Rocket
-    let downloader : DownloadImage = DownloadImage()
-    @State var image : Image?
-    
+    let rocket: Rocket
+    let downloader: DownloadImage = DownloadImage()
+    @State var image: Image?
+
     var body: some View {
         ZStack(alignment: .bottomLeading, content: {
-            backgroundContent().frame(width: 240, height: 320, alignment: .center).clipped()
+            backgroundContent().frame(width: 140, height: 220, alignment: .center).clipped()
             info()
         }).cornerRadius(8)
         .onAppear(perform: {
@@ -23,7 +23,7 @@ struct RowRocket: View {
             }
         })
     }
-    
+
     func backgroundContent() -> some View {
         if let image = image {
             return AnyView(image.resizable().scaledToFill())
@@ -38,17 +38,17 @@ struct RowRocket: View {
                 .foregroundColor(Color.white)
                 .bold()
                 .font(.title)
-            Text(rocket.type)
+            Text(rocket.type.capitalized)
                 .foregroundColor(Color.white)
                 .bold()
                 .font(.title3)
-            
+
         })
         .padding(8)
-        .frame(width: 240, alignment: .leading)
-        .background(LinearGradient(gradient: Gradient(colors: [Color.black.opacity(1), Color.black.opacity(0.01)]), startPoint: .bottom, endPoint: .top))
+        .frame(width: 140, alignment: .leading)
+        .applyCustomGradient(type: .black)
     }
-    
+
 }
 
 struct RowRocket_Previews: PreviewProvider {

@@ -12,13 +12,13 @@ import SpaceXClient
 @main
 struct SpaceXApp: App {
 
-    private let appContainer : AppContainer
-    
+    private let appContainer: AppContainer
+
     init() {
         let client = Client()
         self.appContainer = AppContainer(client: client)
     }
-    
+
     var body: some Scene {
         WindowGroup {
             ContentView().accentColor(Color.black).environmentObject(appContainer)

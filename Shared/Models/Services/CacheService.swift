@@ -10,22 +10,22 @@ import Combine
 import SwiftUI
 
 struct CacheService {
-    
+
     static let defaultCache = getCache()
-    
+
     private static func getCache() -> NSCache<NSURL, UIImage> {
         let cache = NSCache<NSURL, UIImage>()
         cache.countLimit = 100
         cache.totalCostLimit = 1024 * 1024 * 100
         return cache
     }
-    
+
     static func getURL(name: String, extensionFile: String = "jpg") throws -> URL {
         let destinationURL = URL(string: "/images")
         let url = try FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: destinationURL, create: true)
         return url.appendingPathComponent(name).appendingPathExtension(extensionFile)
     }
-    
+
     static func getImage(name: String, extensionFile: String = "jpg", queue: ReadWriteLock) -> Data? {
         var result: Data?
         queue.read {
@@ -38,7 +38,7 @@ struct CacheService {
         }
         return result
     }
-    
+
     static func getImage(url: URL, queue: ReadWriteLock) -> UIImage? {
         var result: UIImage?
         queue.read {
@@ -47,7 +47,7 @@ struct CacheService {
         }
         return result
     }
-    
+
     static func saveImage(url: URL, image: UIImage, queue: ReadWriteLock) {
         queue.write {
             let cache = defaultCache
@@ -55,7 +55,7 @@ struct CacheService {
             cache.setObject(image as UIImage, forKey: url as NSURL)
         }
     }
-    
+
     static func saveImagePublisher(url: URL, image: UIImage, queue: ReadWriteLock) -> AnyPublisher<UIImage?, Never> {
         Future { promise in
             queue.write {
@@ -66,8 +66,7 @@ struct CacheService {
             }
         }.eraseToAnyPublisher()
     }
-    
-    
+
     static func saveImagePublisher(name: String, extensionFile: String = "jpg", data: Data, queue: ReadWriteLock) -> AnyPublisher<UIImage?, Never> {
         Future { promise in
             queue.write {
@@ -81,7 +80,7 @@ struct CacheService {
             }
         }.eraseToAnyPublisher()
     }
-    
+
     static func saveImage(name: String, extensionFile: String = "jpg", data: Data, queue: ReadWriteLock) {
         queue.write {
             do {
@@ -92,7 +91,7 @@ struct CacheService {
             }
         }
     }
-    
+
     static func removeImage(name: String, extensionFile: String = "jpg") {
         do {
             let temporaryFileURL =  try CacheService.getURL(name: name, extensionFile: extensionFile)
@@ -101,5 +100,5 @@ struct CacheService {
             debugPrint(error)
         }
     }
-    
+
 }

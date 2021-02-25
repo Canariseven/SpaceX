@@ -9,8 +9,8 @@ import Foundation
 import SpaceXApi
 
 extension RocketDTO {
-    
-    var rocket : Rocket {
+
+    var rocket: Rocket {
         Rocket.init(id: self.id,
                     flickr_images: self.flickr_images,
                     height: Measurement<UnitLength>(value: Double(self.height.meters), unit: UnitLength.meters),
@@ -25,5 +25,5 @@ extension RocketDTO {
                     wikipedia: self.wikipedia,
                     description: self.description)
     }
-    
+
 }

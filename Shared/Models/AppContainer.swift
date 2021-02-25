@@ -10,15 +10,19 @@ import SpaceXApi
 import SpaceXClient
 
 final class AppContainer: ObservableObject {
-    
+
     let client: Client
-    
+
     init(client: Client) {
         self.client = client
     }
-    
+
     func resolve() -> RocketsService {
         RocketsService(client: client)
+    }
+
+    func resolve() -> CompanyInfoService {
+        CompanyInfoService(client: client)
     }
 
 }

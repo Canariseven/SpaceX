@@ -19,7 +19,7 @@ class ReadWriteLock: Hashable {
 
     let concurentQueue: DispatchQueue
 
-    init(label: String) {        
+    init(label: String) {
         self.concurentQueue = DispatchQueue(label: label, qos: .background, attributes: .concurrent)
     }
 

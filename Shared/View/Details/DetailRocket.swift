@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct DetailRocket: View {
-    
-    let rocket : Rocket
-    
+
+    let rocket: Rocket
+
     var body: some View {
         ScrollView(.vertical, showsIndicators: true, content: {
             VStack(alignment: .center, spacing: 0, content: {
@@ -34,7 +34,7 @@ struct DetailRocket: View {
             descriptionRocket()
         }).background(Color.black).foregroundColor(.white).padding()
     }
-    
+
     private func wikipediaLink() -> some View {
         CustomSection(title: "Wikipedia") {
             Link(destination: rocket.wikipedia, label: {
@@ -42,13 +42,13 @@ struct DetailRocket: View {
             })
         }
     }
-    
+
     private func descriptionRocket() -> some View {
         CustomSection(title: "Description") {
             Text(rocket.description).fixedSize(horizontal: false, vertical: true)
         }
     }
-    
+
     private func fieldsCharacteristics() -> some View {
         ScrollView(.horizontal, showsIndicators: false, content: {
             HStack(alignment: .center, spacing: 16) {
@@ -66,7 +66,7 @@ struct DetailRocket: View {
             }
         })
     }
-    
+
 }
 
 struct DetailRockt_Previews: PreviewProvider {

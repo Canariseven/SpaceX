@@ -10,30 +10,27 @@ import Combine
 import SpaceXApi
 import SpaceXClient
 
-final class RocketsService: ObservableObject {
-    @Published var list : [Rocket] = []
-    
-    private var client: Client
-    private var subscribers: Set<AnyCancellable> = Set<AnyCancellable>()
-    
-    init(client: Client) {
-        self.client = client
-    }
-    
+final class RocketsService: ApiService<BasicAlertError>, ObservableObject {
+
+    @Published var list: [Rocket] = []
+
     func getAllRockets() {
         client.getAllRockets()
+            .mapError({mapError(error: $0)})
+            .compactMap({ dto in dto.map({ $0.rocket }) })
             .subscribe(on: DispatchQueue.global())
             .receive(on: RunLoop.main)
-            .sink { (result) in
-            switch result {
-            case .finished:
-                debugPrint("Finished")
-            case .failure(let error):
-                debugPrint(error)
-            }
-        } receiveValue: { (dto) in
-            self.list = dto.map({ $0.rocket })
-        }.store(in: &subscribers)
+            .sink(receiveCompletion: receiveCompletion, receiveValue: setRockets)
+            .store(in: &subscribers)
+    }
+
+    private func setRockets( _ rockets: [Rocket]) {
+        if rockets.isEmpty {
+            state = .idle()
+        } else {
+            self.list = rockets
+            state = .loaded()
+        }
     }
 
 }

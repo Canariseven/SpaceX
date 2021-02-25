@@ -11,22 +11,21 @@ import SpaceXApi
 import SpaceXClient
 
 #if DEBUG
-var httpFetcherPreview : HTTPFetcherTest = HTTPFetcherTest()
+var httpFetcherPreview: HTTPFetcherTest = HTTPFetcherTest()
 
-var clientPreview : Client {
+var clientPreview: Client {
     Client(fetcher: httpFetcherPreview)
 }
 
-var appContainerPreview : AppContainer = AppContainer(client: clientPreview)
-
+var appContainerPreview: AppContainer = AppContainer(client: clientPreview)
 
 final class HTTPFetcherTest: HTTPFetcher {
-    
-    var data : Data?
-    var error : Error?
-    
+
+    var data: Data?
+    var error: Error?
+
     func data(request: URLRequest) -> AnyPublisher<Data, Error> {
-        Future<Data,Error> { promise in
+        Future<Data, Error> { promise in
             if let error = self.error {
                 promise(.failure(error))
             }
@@ -35,6 +34,6 @@ final class HTTPFetcherTest: HTTPFetcher {
             }
         }.eraseToAnyPublisher()
     }
-    
+
 }
 #endif

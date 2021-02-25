@@ -8,8 +8,8 @@
 import Foundation
 
 public struct Rocket: Identifiable, Hashable {
-    public let id : String
-    public let flickr_images : [URL]
+    public let id: String
+    public let flickr_images: [URL]
     public let height: Measurement<UnitLength>
     public let diameter: Measurement<UnitLength>
     public let mass: Measurement<UnitMass>
@@ -19,6 +19,6 @@ public struct Rocket: Identifiable, Hashable {
     public let stages: Int8
     public let country: String
     public let company: String
-    public let wikipedia : URL
+    public let wikipedia: URL
     public let description: String
 }

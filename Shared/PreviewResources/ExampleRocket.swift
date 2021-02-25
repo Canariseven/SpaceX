@@ -9,8 +9,8 @@ import Foundation
 
 #if DEBUG
 
-let exampleRocket : Rocket = Rocket(id: UUID().uuidString,
-                                    flickr_images: ["https://farm5.staticflickr.com/4599/38583829295_581f34dd84_b.jpg", "https://farm5.staticflickr.com/4645/38583830575_3f0f7215e6_b.jpg", "https://farm5.staticflickr.com/4696/40126460511_b15bf84c85_b.jpg", "https://farm5.staticflickr.com/4711/40126461411_aabc643fd8_b.jpg"].map{URL(string: $0)!},
+let exampleRocket: Rocket = Rocket(id: UUID().uuidString,
+                                    flickr_images: ["https://farm5.staticflickr.com/4599/38583829295_581f34dd84_b.jpg", "https://farm5.staticflickr.com/4645/38583830575_3f0f7215e6_b.jpg", "https://farm5.staticflickr.com/4696/40126460511_b15bf84c85_b.jpg", "https://farm5.staticflickr.com/4711/40126461411_aabc643fd8_b.jpg"].map {URL(string: $0)!},
                                     height: Measurement<UnitLength>(value: 20, unit: .meters),
                                     diameter: Measurement<UnitLength>(value: 30, unit: .meters),
                                     mass: Measurement<UnitMass>(value: 3000, unit: .kilograms),
