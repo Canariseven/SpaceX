@@ -15,95 +15,58 @@ struct DetailRocket: View {
         ScrollView(.vertical, showsIndicators: true, content: {
             VStack(alignment: .center, spacing: 0, content: {
                 ZStack(alignment: .top, content: {
-                    header().height(520, alignment: .top)
-                    Rectangle().foregroundColor(.clear).whiteBackgroundGradient().rotationEffect(Angle.degrees(180)).height(64 + 32, alignment: .top)
+                    HeaderDetailRocket(rocket: rocket).height(520, alignment: .top)
+                    Rectangle().foregroundColor(.clear).applyCustomGradient(type: .white).rotationEffect(Angle.degrees(180)).height(64 + 32, alignment: .top)
                 })
                 content()
-            })
+            }).padding(.bottom, 128)
         })
-       .background(Color.black)
-        .edgesIgnoringSafeArea(.all)
-        
+       .background(Color.black).edgesIgnoringSafeArea(.all)
     }
-    
-    func header() -> some View {
-        HeaderDetailRocket(rocket: rocket)
-    }
-    
-    func content() -> some View {
+
+    private func content() -> some View {
         VStack(alignment: .leading, spacing: 16, content: {
-            fields()
-            Text(rocket.description).fixedSize(horizontal: false, vertical: true)
+            CustomDivider()
+            wikipediaLink()
+            CustomDivider()
+            fieldsCharacteristics()
+            CustomDivider()
+            descriptionRocket()
         }).background(Color.black).foregroundColor(.white).padding()
     }
     
-    func fields() -> some View {
-        HStack(alignment: .center, spacing: 16) {
-            CustomSection(title: "Height") {                
-                Text(rocket.height.string()).applyTagStyle()
-            }
-            Divider().background(Color.white)
-            CustomSection(title: "Diameter") {
-                Text(rocket.diameter.string()).applyTagStyle()
-            }
-            Divider().background(Color.white)
-            CustomSection(title: "Mass") {
-                Text(rocket.mass.string()).applyTagStyle()
-            }
+    private func wikipediaLink() -> some View {
+        CustomSection(title: "Wikipedia") {
+            Link(destination: rocket.wikipedia, label: {
+                Image(systemName: "book.circle").resizable().frame(width: 32, height: 32, alignment: .topTrailing).foregroundColor(.white)
+            })
         }
     }
     
-}
-
-struct HeaderDetailRocket: View {
-    let rocket : Rocket
-    let timer = Timer.publish(every: 3, on: RunLoop.main, in: RunLoop.Mode.default).autoconnect()
-    @State var selected = 0
-    var body: some View {
-        ZStack(alignment: .bottomLeading, content: {
-            backgroundImages()
-            bottomInfo().infinityWidth(alignment: .leading).blackBackgroundGradient()
-        }).onReceive(timer, perform: { _ in
-            withAnimation(Animation.easeInOut(duration: 0.3)) {
-                if selected < rocket.flickr_images.count - 1 {
-                    selected += 1
-                } else {
-                    selected = 0
+    private func descriptionRocket() -> some View {
+        CustomSection(title: "Description") {
+            Text(rocket.description).fixedSize(horizontal: false, vertical: true)
+        }
+    }
+    
+    private func fieldsCharacteristics() -> some View {
+        ScrollView(.horizontal, showsIndicators: false, content: {
+            HStack(alignment: .center, spacing: 16) {
+                CustomSection(title: "Height") {
+                    Text(rocket.height.string()).applyTagStyle()
+                }
+                CustomDivider()
+                CustomSection(title: "Diameter") {
+                    Text(rocket.diameter.string()).applyTagStyle()
+                }
+                CustomDivider()
+                CustomSection(title: "Mass") {
+                    Text(rocket.mass.string()).applyTagStyle()
                 }
             }
         })
     }
     
-    func backgroundImages() -> some View {
-        ZStack(alignment: .center, content: {
-            ForEach((0..<rocket.flickr_images.count), id: \.self) { index in
-                DetailImage(url: rocket.flickr_images[index]).opacity(index == selected ? 1.0 : 0.0)
-            }
-        })
-    }
-    
-    func bottomInfo() -> some View {
-        VStack(alignment: .leading, spacing: 8, content: {
-            Text(rocket.name).font(.system(size: 64, weight: Font.Weight.heavy, design: .rounded))
-            Text(rocket.type).font(.title).bold()
-        }).padding().foregroundColor(.white)
-    }
-    
-}
-
-struct DetailImage : View {
-    let url: URL
-    private let downloader: DownloadImage = DownloadImage()
-    @State private var image : Image?
-    
-    var body: some View {
-        ZStack(alignment: .bottomLeading, content: {
-            image?.resizable()
-        }).onAppear(perform: {
-            downloader.download(url: url, content: $image)
-        })
-    }
-
 }
 
 struct DetailRockt_Previews: PreviewProvider {
